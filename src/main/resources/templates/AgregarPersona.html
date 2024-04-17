@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div th:replace="/components/linksCSS.html"></div>
+  <div th:replace="components/linksScripts.html"></div>
+  <title>Guardar persona</title>
+</head>
+
+<body>
+  <aside th:replace="components/aside.html"></aside>
+  <header th:replace="components/header.html"></header>
+
+  <main>
+    <section>
+      <div class="card" style="width: 40rem;">
+        <div class="card-body">
+          <h5 class="card-title">Agregar persona</h5>
+
+          <form th:action="@{/Personas/crear}" th:object="${persona}" method="post" class="row g-3 needs-validation" novalidate>
+            <input type="hidden" th:field="*{id}">
+            <div class="col-md-6">
+              <label for="validationCustom01" class="form-label">Nombres</label>
+              <input type="text" th:field="*{nombres}" class="form-control" id="validationCustom01" required>
+              <div class="valid-feedback">
+                Luce bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom02" class="form-label">Apellidos</label>
+              <input type="text" th:field="*{apellidos}" class="form-control" id="validationCustom02" value="" required>
+              <div class="valid-feedback">
+                Luce bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom05" class="form-label">NUI</label>
+              <input type="text" th:field="*{nui}" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Por favor, ingresa un número de identificación valido.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom06" class="form-label">Teléfono</label>
+              <input type="text" class="form-control" id="validationCustom06" th:field="*{telefono}" required>
+              <div class="invalid-feedback">
+                Por favor, ingresa un número telefónico valido.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom07" class="form-label">Fecha de nacimiento</label>
+              <input type="date" class="form-control" id="validationCustom07" th:field="*{fecha_nacimiento}" required>
+              <div class="invalid-feedback">
+                Por favor, ingresa una fecha de nacimiento.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom08" class="form-label">Email</label>
+              <input type="text" th:field="*{email}" class="form-control" id="validationCustom08" required>
+              <div class="invalid-feedback">
+                Por favor, ingresa un correo electrónico valido.
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer th:replace="components/footer.html"></footer>
+  
+</body>
+
+</html>

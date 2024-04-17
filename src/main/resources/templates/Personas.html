@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div th:replace="components/linksCSS.html"></div>
+  <title>Personas</title>
+</head>
+<body>
+  <aside th:replace="./components/aside.html"></aside>
+  <header th:replace="./components/header.html"></header>
+  <main>
+    <div class="actions">
+      <h2>Personas</h2>
+      <ul>
+        <li><a href="/Personas/Agregar">Agregar</a></li>
+        <li><a href="#">Eliminar</a></li>
+        <li><a href="#">Modificar</a></li>
+      </ul>
+      <table class="table">
+        <thead>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>NUI</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Fecha nacimiento</th>
+        </thead>
+        <tbody>
+          <tr th:each="persona : ${personas}">
+            <td th:text="${persona.nombres}"></td>
+            <td th:text="${persona.apellidos}"></td>
+            <td th:text="${persona.nui}"></td>
+            <td th:text="${persona.telefono}"></td>
+            <td th:text="${persona.email}"></td>
+            <td th:text="${persona.fecha_nacimiento}"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer th:replace="./components/footer.html"></footer>
+
+  <div th:replace="/components/linksScripts.html"></div>
+</body>
+</html>

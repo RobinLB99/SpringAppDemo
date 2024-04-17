@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div th:replace="components/linksCSS.html"></div>
+  <title>App Web con SpringBoot</title>
+</head>
+
+<body>
+  <aside th:replace="./components/aside.html"></aside>
+  <header th:replace="./components/header.html"></header>
+  <main>
+    <section>
+      <article>
+        <p>Esto es una Aplicación con SpringBoot</p>
+      </article>
+    </section>
+  </main>
+  <footer th:replace="./components/footer.html"></footer>
+  <div th:replace="/components/linksScripts.html"></div>
+</body>
+
+</html>
